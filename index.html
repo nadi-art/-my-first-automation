@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>התוספים שלי</title>
+<style>
+  :root { --main: #5b3df5; --bg: #f6f5ff; }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: #222;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  header { padding: 40px 16px 16px; }
+  h1 { color: var(--main); margin: 0 0 8px; }
+  p { margin: 0; }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-top: 5px solid var(--main);
+  }
+  .card h2 { margin: 0 0 6px; color: var(--main); }
+  button {
+    margin: 24px 0 40px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 999px;
+    background: var(--main);
+    color: #fff;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>התוספים שלי</h1>
+    <p>משווק עצמאי בביהיפ גלובל</p>
+  </header>
+
+  <div class="cards">
+    <div class="card">
+      <h2>Indigo</h2>
+      <p>כאן יבוא תיאור קצר של המוצר.</p>
+    </div>
+    <div class="card">
+      <h2>XGRN</h2>
+      <p>כאן יבוא תיאור קצר של המוצר.</p>
+    </div>
+    <div class="card">
+      <h2>Byng</h2>
+      <p>כאן יבוא תיאור קצר של המוצר.</p>
+    </div>
+  </div>
+
+  <button id="colorBtn">שנה צבע 🎨</button>
+
+  <script>
+    const colors = ["#5b3df5", "#e63946", "#2a9d8f", "#f77f00", "#118ab2"];
+    let i = 0;
+    document.getElementById("colorBtn").addEventListener("click", function () {
+      i = (i + 1) % colors.length;
+      document.documentElement.style.setProperty("--main", colors[i]);
+    });
+  </script>
+</body>
+</html>
